@@ -38,9 +38,9 @@
         asdf.setSeconds(asdf.getSeconds() + 1);
         document.getElementById('timetext').textContent = `${asdf.getDate()}(${day[asdf.getDay()]})
         ${asdf.getHours()}:${asdf.getMinutes()}`;
-        if (/*asdf.getHours() == 59 && */asdf.getSeconds() == 57)
+        if (asdf.getHours() == 59 && asdf.getSeconds() == 57)
         {
-            var audio = new Audio('TimeReport.mp3');
+            var audio = new Audio('https://nyj36.github.io/timewidget/TimeReport.mp3');
             audio.volume = 0.3;
             audio.play();
         }
