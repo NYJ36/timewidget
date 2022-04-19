@@ -24,10 +24,14 @@
     </head>
 
     <body>
+        <iframe src="silence.mp3" allow="autoplay" id="audio" style="display:none"></iframe>
+        <audio id="reportaudio">
+            <source src="TimeReport.mp3" type="audio/mpeg">
+            지원히지 않는 웹사이트입니다.
+        </audio>
         <p class="timetext" id="timetext">00(금)<br>00:00</p>
     </body>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src=""></script> 
     <script>
         var asdf = new Date();
         var day = ["일", "월", "화", "수", "목", "금", "토"]
@@ -39,12 +43,7 @@
         asdf.setSeconds(asdf.getSeconds() + 1);
         document.getElementById('timetext').textContent = `${asdf.getDate()}(${day[asdf.getDay()]})
         ${asdf.getHours()}:${asdf.getMinutes()}`;
-        if (asdf.getHours() == 59 && asdf.getSeconds() == 57)
-        {
-            var audio = new Audio('TimeReport.mp3');
-            audio.volume = 0.3;
-            audio.play();
-        }
+        if (asdf.getMinutes() == 59 && asdf.getSeconds() == 57) $('#reportaudio')[0].play();
         }
         function clock_sync(){
             $.getJSON('https://worldtimeapi.org/api/timezone/Asia/Seoul', function(data) {
