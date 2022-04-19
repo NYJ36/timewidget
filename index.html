@@ -43,7 +43,7 @@
             asdf.setSeconds(asdf.getSeconds() + 1);
             document.getElementById('timetext').textContent = `${asdf.getDate()}(${day[asdf.getDay()]})
             ${asdf.getHours()}:${asdf.getMinutes()}`;
-            if (/*asdf.getMinutes() == 59 && */asdf.getSeconds() == 57) $('#reportaudio')[0].play();
+            if (asdf.getMinutes() == 59 && asdf.getSeconds() == 57) $('#reportaudio')[0].play();
         }
         function clock_sync(){
             $.getJSON('https://worldtimeapi.org/api/timezone/Asia/Seoul', function(data) {
