@@ -40,10 +40,10 @@
         setInterval(clock_tick, 1000);
         setInterval(clock_sync, 300000);
         function clock_tick(){
-        asdf.setSeconds(asdf.getSeconds() + 1);
-        document.getElementById('timetext').textContent = `${asdf.getDate()}(${day[asdf.getDay()]})
-        ${asdf.getHours()}:${asdf.getMinutes()}`;
-        if (asdf.getMinutes() == 59 && asdf.getSeconds() == 57) $('#reportaudio')[0].play();
+            asdf.setSeconds(asdf.getSeconds() + 1);
+            document.getElementById('timetext').textContent = `${asdf.getDate()}(${day[asdf.getDay()]})
+            ${asdf.getHours()}:${asdf.getMinutes()}`;
+            if (/*asdf.getMinutes() == 59 && */asdf.getSeconds() == 57) $('#reportaudio')[0].play();
         }
         function clock_sync(){
             $.getJSON('https://worldtimeapi.org/api/timezone/Asia/Seoul', function(data) {
