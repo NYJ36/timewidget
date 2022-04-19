@@ -26,7 +26,8 @@
     <body>
         <p class="timetext" id="timetext">00(금)<br>00:00</p>
     </body>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src=""></script> 
     <script>
         var asdf = new Date();
         var day = ["일", "월", "화", "수", "목", "금", "토"]
@@ -40,7 +41,7 @@
         ${asdf.getHours()}:${asdf.getMinutes()}`;
         if (asdf.getHours() == 59 && asdf.getSeconds() == 57)
         {
-            var audio = new Audio('https://nyj36.github.io/timewidget/TimeReport.mp3');
+            var audio = new Audio('TimeReport.mp3');
             audio.volume = 0.3;
             audio.play();
         }
